@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-assignment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-assignment
+  template:
+    metadata:
+      labels:
+        app: devops-assignment
+    spec:
+      containers:
+      - name: flask
+        image: yourdockerhubusername/devops-assignment:latest
+        ports:
+        - containerPort: 5000
